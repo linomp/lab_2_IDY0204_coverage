@@ -35,14 +35,11 @@ class Artistclasstest(TestCase):
         """
         Testing if method remove_likes working properly
         """
-        self.artist.likes = 0
-        self.artist.remove_likes()
-        self.assertEqual(0,self.artist.likes)
-
         self.artist.likes = 3
         for _ in range(2):
             self.artist.remove_likes()
         self.assertEqual(1,self.artist.likes)
+        
 
     def test_get_arts_by_names(self):
         """
@@ -61,11 +58,6 @@ class Artistclasstest(TestCase):
         """
         Testing if method remove_arts removing all arts
         """
-
-        self.artist.arts = []
-        self.artist.remove_arts()
-        self.assertEqual([],self.artist.arts)
-
 
         self.artist.add_art('art1')
         self.artist.add_art('art2')
@@ -96,6 +88,5 @@ class Artistclasstest(TestCase):
 
         self.assertEqual(test_json,valid_json_response)
 
-    
 
 
