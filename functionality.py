@@ -9,13 +9,20 @@ class Classtobetested(object):
         self.email = email
         self.likes = 0
         self.arts = []
+        self.json = {
+            'name': self.name,
+            'surname': self.surname,
+            'likes': self.likes,
+            'arts': {
+            }
+        }
 
     
-    def add_pets(self,artname):
+    def add_art(self,artname):
         if artname not in self.arts:
             self.arts.append(artname)
     
-    def get_artnames(self,artnames):
+    def get_artnames(self):
         return self.arts
     
     def add_likes(self):
@@ -31,4 +38,16 @@ class Classtobetested(object):
                 return art
         return None
     
+    def remove_arts(self):
+        while self.arts != []:
+            self.arts.pop()
     
+    def get_json(self):
+        var_json = self.json
+        for key in var_json:
+            if key == 'arts':
+                var_json[key]['artnames'] = []
+                for art in self.arts:
+                    var_json[key]['artnames'].append(art)
+        
+        return var_json
