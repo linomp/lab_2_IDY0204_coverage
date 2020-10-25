@@ -9,13 +9,7 @@ class Artist(object):
         self.email = email
         self.likes = 0
         self.arts = []
-        self.json = {
-            'name': self.name,
-            'surname': self.surname,
-            'likes': self.likes,
-            'arts': {
-            }
-        }
+        self.json = {}
 
     
     def add_art(self,artname):
@@ -43,7 +37,14 @@ class Artist(object):
             self.arts.pop()
     
     def get_json(self):
-        var_json = self.json
+        var_json = {
+            'name': self.name,
+            'surname': self.surname,
+            'likes': self.likes,
+            'arts': {
+            }
+        }
+        
         for key in var_json:
             if key == 'arts':
                 var_json[key]['artnames'] = []
