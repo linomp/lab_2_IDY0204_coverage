@@ -1,6 +1,6 @@
 import random
 
-class Classtobetested(object):
+class Artist(object):
 
     def __init__(self,name,surname,email):
         
