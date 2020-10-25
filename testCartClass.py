@@ -1,7 +1,7 @@
 from unittest import TestCase
 from functionality import *
 
-class Artistclasstest(TestCase):
+class CartClassTest(TestCase):
 
     def test_add_item(self):
         """

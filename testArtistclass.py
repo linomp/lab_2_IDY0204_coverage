@@ -1,7 +1,7 @@
 from unittest import TestCase
 from functionality import *
 
-class Artistclasstest(TestCase):
+class ArtistClassTest(TestCase):
 
     def setUp(self): 
         self.artist = Artist('Testname','Testsurname','test@mail.com')
