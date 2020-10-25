@@ -1,17 +1,34 @@
-def array_manipulation ():
-    n, queries = map(int, input().split())
+import random
 
-    arr = [0 for i in range(n+2)]
+class Classtobetested(object):
 
-    for i in range(queries):
-        start, finish, k = map(int, input().split())
-        arr[start - 1] += k
-        arr[finish] -= k
-    ans = 0
-    current = 0
-    for i in arr:
-        current += i
-        if current > ans:
-            ans = current
+    def __init__(self,name,surname,email):
+        
+        self.name = name
+        self.surname = surname
+        self.email = email
+        self.likes = 0
+        self.arts = []
 
-    return ans
+    
+    def add_pets(self,artname):
+        if artname not in self.arts:
+            self.arts.append(artname)
+    
+    def get_artnames(self,artnames):
+        return self.arts
+    
+    def add_likes(self):
+        self.likes += 1
+    
+    def remove_likes(self):
+        if self.likes > 0:
+            self.likes -= 1
+    
+    def get_art_by_name(self,artname):
+        for art in self.arts:
+            if art == artname:
+                return art
+        return None
+    
+    
